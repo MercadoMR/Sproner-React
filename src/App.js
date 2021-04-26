@@ -10,6 +10,8 @@ import SongsList from './components/SongsList-Component';
  https://spring.io/guides/tutorials/react-and-spring-data-rest/
  https://bezkoder.com/react-crud-web-api/
  
+ Deployment: 
+ https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/
 
 */
 
