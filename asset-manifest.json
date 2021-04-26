@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Sproner-React/static/css/main.70683c80.chunk.css",
+    "main.js": "/Sproner-React/static/js/main.3ddaefb3.chunk.js",
+    "main.js.map": "/Sproner-React/static/js/main.3ddaefb3.chunk.js.map",
+    "runtime-main.js": "/Sproner-React/static/js/runtime-main.18900ad0.js",
+    "runtime-main.js.map": "/Sproner-React/static/js/runtime-main.18900ad0.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/Sproner-React/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.fc84f67e.chunk.js": "/Sproner-React/static/js/2.fc84f67e.chunk.js",
+    "static/js/2.fc84f67e.chunk.js.map": "/Sproner-React/static/js/2.fc84f67e.chunk.js.map",
+    "index.html": "/Sproner-React/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/Sproner-React/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.70683c80.chunk.css.map": "/Sproner-React/static/css/main.70683c80.chunk.css.map",
+    "static/js/2.fc84f67e.chunk.js.LICENSE.txt": "/Sproner-React/static/js/2.fc84f67e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18900ad0.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.fc84f67e.chunk.js",
+    "static/css/main.70683c80.chunk.css",
+    "static/js/main.3ddaefb3.chunk.js"
+  ]
+}
