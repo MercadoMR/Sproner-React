@@ -12,7 +12,7 @@ import SongsList from './components/SongsList-Component';
  
  Deployment: 
  https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/
-
+https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 */
 
 class App extends Component {
