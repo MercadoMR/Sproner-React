@@ -18,12 +18,9 @@ export default class SongsList extends Component{
         this.retrieveSongs = this.retrieveSongs.bind(this);
         this.refreshList = this.refreshList.bind(this);
         this.searchTitle = this.searchTitle.bind(this);
-
-
+        this.deleteSong = this.deleteSong.bind(this);
         this.state = {
             songs: [],
-            currentSong: null,
-            currentIndex: -1,
             searchTitle: ""
         };
     }
@@ -32,13 +29,25 @@ export default class SongsList extends Component{
         this.retrieveSongs();
     }
 
+    deleteSong(id){
+        SongsDataService.delete(id)
+        .then( response => {
+            console.log(response.data);
+            this.refreshList();
+        }).catch(e => {
+            console.log(e);
+        })
+    }
+
     retrieveSongs(){
         SongsDataService.getAll()
         .then(response => {
+          console.log("Se invoco de nuevo el obtener los songs");
           this.setState({
             songs: response.data
           });
           console.log(response.data);
+          console.log("Esos fueron los datos de los songs");
         })
         .catch(e => {
           console.log(e);
@@ -47,15 +56,10 @@ export default class SongsList extends Component{
 
     refreshList(){
         this.retrieveSongs();
-        this.setState({
-            currentTutorial: null,
-            currentIndex: -1
-        });
     }
 
     onChangeSearchTitle(e) {
         const searchTitle = e.target.value;
-
         this.setState({
           searchTitle: searchTitle
         });
@@ -76,7 +80,7 @@ export default class SongsList extends Component{
 
     render(){
 
-        const { searchTitle, songs, currentSong, currentIndex } = this.state;
+        const { searchTitle, songs} = this.state;
         
         return (
         <div>
@@ -100,14 +104,15 @@ export default class SongsList extends Component{
             </div>
             <h4>Songs List</h4>
             {
+
             this.state.songs ? (
-                <div>
-                <table class="table table-dark table-hover">
+                <div className="table-responsive"> 
+                <table className="table table-dark table-hover" style={{tableLayout:"fixed"}} >
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col" style={{width:"5%"}}>#</th>
                         <th scope="col">Song</th>
-                        <th scope="col">Description</th>
+                        <th scope="col" style={{width:"35%"}}>Description</th>
                         <th scope="col">Published on</th>
                         <th scope="col">Duration</th>
                         <th scope="col">Actions</th>
@@ -123,9 +128,10 @@ export default class SongsList extends Component{
                             <td>{song.publishedOn}</td>
                             <td>{song.duration}</td>
                             <td>
-                            <Link
-                            to={"/song/"+index}
-                            ><i class="fas fa-edit" style={{color: "white"}} ></i></Link>
+                            <Link to={"/songs/"+song.id} >
+                                <i className="fas fa-eye fa-2x" style={{color: "white"}} ></i>
+                            </Link>
+                            <button className="btn" onClick={() => this.deleteSong(song.id)}><i className="fa fa-trash fa-2x" style={{color: "white"}}></i></button>
                             </td>
                     </tr>
                 ))}
@@ -134,8 +140,8 @@ export default class SongsList extends Component{
             </div>
             ) : (
                 <div>
-                <h5>There is no content yet :( </h5>
-                <p>You can add songs using the link add</p>
+                <h5>Content not found :( </h5>
+                <p>You can add more content using add+</p>
                 </div>
             )
         }

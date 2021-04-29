@@ -10,6 +10,16 @@ class SongsDataService{
     findByTitle(title){
         return http.get(`/song?title=${title}`);
     }
+    delete(id){
+        return http.delete(`/song/${id}`);
+    }
+    get(id){
+        return http.get(`/song/${id}`);
+    }
+    update(id,data){
+        return http.put(`/song/${id}`,data);
+    }
+
 }
 
 export default new SongsDataService();

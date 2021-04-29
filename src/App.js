@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import AddSong from './components/AddSong-Component';
 import SongsList from './components/SongsList-Component';
+import Song from './components/Song-Component';
 
 /* https://www.freecodecamp.org/espanol/news/npm-vs-npx-cual-es-la-diferencia/ 
   
@@ -20,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link className="navbar-brand">
+          <Link to={"/"} className="navbar-brand">
             Music!
           </Link>
           <div className="navbar-nav mr-auto">
@@ -41,6 +42,7 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/songs"]} component={SongsList} />
             <Route exact path="/add" component={AddSong} />
+            <Route path="/songs/:id" component={Song} />
           </Switch>
         </div>
       </div>
