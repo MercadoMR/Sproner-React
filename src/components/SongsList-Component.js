@@ -112,7 +112,7 @@ export default class SongsList extends Component{
                     <tr>
                         <th scope="col" style={{width:"5%"}}>#</th>
                         <th scope="col">Song</th>
-                        <th scope="col" style={{width:"35%"}}>Description</th>
+                        <th scope="col" style={{width:"35%"}}>Lyrics</th>
                         <th scope="col">Published on</th>
                         <th scope="col">Duration</th>
                         <th scope="col">Actions</th>

@@ -105,16 +105,18 @@ export default class AddSong extends Component{
                             <input type="text" className="form-control"
                             id="title" required value={this.state.title}
                             onChange={this.onChangeTitle}
+                            placeholder="Write the song's title"
                             name="title"
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description">Description:</label>
+                            <label htmlFor="description">Lyrics:</label>
                             <textarea className="form-control" id="descripcion"
                              required value={this.state.description}
                              onChange={this.onChangeDescription}
                              name="description" rows="3"
+                             placeholder="Write the song's lyrics"
                             >
                             </textarea>
                         </div>
@@ -126,6 +128,7 @@ export default class AddSong extends Component{
                             pattern="[0-9]{4}-[0-9]{2}"
                             value={this.state.publishedOn}
                             onChange={this.onChangePublishedOn}
+                            placeholder="2012-10"
                             />
                         </div>
 
@@ -136,6 +139,7 @@ export default class AddSong extends Component{
                             pattern="([0-9]{2}:)?[0-9]{2}:[0-9]{2}"
                             value={this.state.duration}
                             onChange={this.onChangeDuration}
+                            placeholder="00:03:30"
                             />
                         </div>
 

@@ -2,12 +2,17 @@ import {Component} from "react";
 import SongsDataService from "../services/Songs-Service";
 import Card from "./Card";
 
+/*
+https://stackoverflow.com/questions/23427384/get-form-data-in-reactjs
+*/
+
 export default class Song extends Component{
     constructor(props){
         super(props);
         this.retrieveSong = this.retrieveSong.bind(this);
         this.updateSong = this.updateSong.bind(this);
         this.editSong = this.editSong.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
 
         this.state = {
             id: props.match.params.id,
@@ -24,8 +29,44 @@ export default class Song extends Component{
         this.retrieveSong(this.state.id);
     }
 
-    updateSong(id){
+    updateSong(){
+        const data = {
+            id: this.state.id,
+            title: this.state.title,
+            description: this.state.description,
+            publishedOn: this.state.publishedOn,
+            duration: this.state.duration,
+        }
+        SongsDataService.update(this.state.id,data).then((response) => {
+            console.log("La respuesta de la api:")
+            console.log(response.data)
+        }).catch((e) => {
+            console.log("Valio, no se pudo actualizar")
+            console.log(e)
+        }).finally(() =>{
+            this.retrieveSong(data.id)
+            this.setState({
+                edit:false
+            })
+        })
 
+        /*
+        
+        console.log(event.target[0].value)
+        console.log(event.target.elements.title.value)
+        console.log(event.target.title.value)
+        console.log(this.state.id)
+        */
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+          [name]: value
+        });
+    
     }
 
     editSong(){
@@ -70,9 +111,9 @@ export default class Song extends Component{
         <div>
         {
            (song.title !== null) ? (
-               <Card edit={song.edit} song={song} editFunction={this.editSong} />
+               <Card edit={song.edit} song={song} handleInputChange={this.handleInputChange} updateSong={this.updateSong} editFunction={this.editSong} />
            ) : (
-               <h2>No existe la rola</h2>
+               <h2>The song you request doesn't exist!</h2>
            )
         }
         </div>
