@@ -89,6 +89,7 @@ export default class AddSong extends Component{
 
     render(){
         return (
+<div className="container mt-3">
             <div className="submit-form">
                 {
                     this.state.submitted ? (
@@ -150,6 +151,7 @@ export default class AddSong extends Component{
                     )
                 }
             </div>
+</div>
         )
     }
 }

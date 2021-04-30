@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import AddSong from './components/AddSong-Component';
 import SongsList from './components/SongsList-Component';
 import Song from './components/Song-Component';
+import {Home, NavBar} from './components/Home';
 
 /* https://www.freecodecamp.org/espanol/news/npm-vs-npx-cual-es-la-diferencia/ 
   
@@ -19,33 +20,17 @@ https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 class App extends Component {
   render() {
     return (
-      <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
-            Music!
-          </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/songs"} className="nav-link">
-                Songs
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/add"} className="nav-link">
-                Add+
-              </Link>
-            </li>
-          </div>
-        </nav>
-
-        <div className="container mt-3">
-          <Switch>
-            <Route exact path={["/", "/songs"]} component={SongsList} />
-            <Route exact path="/add" component={AddSong} />
-            <Route path="/songs/:id" component={Song} />
-          </Switch>
-        </div>
-      </div>
+      <React.Fragment>
+        <NavBar />
+        <Switch>
+          <Route exact path={["/","/home"]} >
+              <Home />
+          </Route>
+          <Route exact path="/songs" component={SongsList} />
+          <Route exact path="/add" component={AddSong} />
+          <Route path="/songs/:id" component={Song} />
+        </Switch>
+      </React.Fragment>
     );
   }
 }

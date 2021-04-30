@@ -6,7 +6,7 @@ import App from './App';
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/Sproner-React">
     <App />
   </BrowserRouter>,
   document.getElementById('root')

@@ -83,7 +83,7 @@ export default class SongsList extends Component{
         const { searchTitle, songs} = this.state;
         
         return (
-        <div>
+    <div className="container mt-3">
             <div className="input-group mb-3">
                 <input
                 type="text"
@@ -145,8 +145,7 @@ export default class SongsList extends Component{
                 </div>
             )
         }
- 
-        </div>
+    </div>
 
         )
     }

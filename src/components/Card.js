@@ -5,6 +5,7 @@ const Card = props => {
 
   if (!edit) {
     return (
+<div className="container mt-3">
         <div className="card text-center">
         <h3 className="card-header lead text-white bg-dark" >
                 {song.title}
@@ -32,13 +33,14 @@ const Card = props => {
             </div>
         </div>
     </div>
+</div>
   )} else {
     return (
-
+<div className="container mt-3" >
 <form className="card text-center">
     <div className="card-header bg-dark">
         <label htmlFor="songTitle" className="text-center text-white lead">Title</label>
-        <input className="form-control w-75" placeholder="Introduce the new song's title" 
+        <input className="form-control w-100" placeholder="Introduce the new song's title" 
         value={song.title} style={{ margin:"0 auto"}}
         onChange={handleInputChange}
         id="songTitle" name="title"
@@ -47,7 +49,7 @@ const Card = props => {
     <div className="card-body">
         <div className="form-group">
             <label htmlFor="songLyrics" className="card-title">New lyrics:</label>
-            <textarea className="form-control card-text w-75"
+            <textarea className="form-control card-text w-100"
                 value={song.description}
                 style={{ margin:"0 auto" }} rows="3"
                 placeholder="Add new lyrics or modify the existent!"
@@ -56,7 +58,7 @@ const Card = props => {
             >
             </textarea>
         </div>
-        <div className="input-group w-75" style={{ margin:"0 auto" }}>
+        <div className="input-group w-100" style={{ margin:"0 auto" }}>
             <label htmlFor="publisheOn" className="input-group-text bg-dark text-white" id="label-published">Published on (yyyy-mm)</label>
             <input type="month" className="form-control" 
             placeholder="Update the song release" aria-describedby="label-published"
@@ -66,7 +68,7 @@ const Card = props => {
             value={song.publishedOn}
             />
         </div>
-        <div className="input-group w-75" style={{ margin:"0 auto" }}>
+        <div className="input-group w-100" style={{ margin:"0 auto" }}>
             <label htmlFor="duration" className="input-group-text bg-dark text-white" id="label-duration">Duration (hh:mm:ss)</label>
             <input type="text" className="form-control" 
             placeholder="Update the song duration" aria-describedby="label-duration"
@@ -89,7 +91,7 @@ const Card = props => {
             </div>
         </div> 
 </form>
-
+</div>
   )}
 };
 
