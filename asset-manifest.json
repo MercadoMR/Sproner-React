@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/Sproner-React/static/css/main.70683c80.chunk.css",
-    "main.js": "/Sproner-React/static/js/main.2c3c57dd.chunk.js",
-    "main.js.map": "/Sproner-React/static/js/main.2c3c57dd.chunk.js.map",
+    "main.js": "/Sproner-React/static/js/main.da9dd04e.chunk.js",
+    "main.js.map": "/Sproner-React/static/js/main.da9dd04e.chunk.js.map",
     "runtime-main.js": "/Sproner-React/static/js/runtime-main.18900ad0.js",
     "runtime-main.js.map": "/Sproner-React/static/js/runtime-main.18900ad0.js.map",
     "static/css/2.dd41c1b4.chunk.css": "/Sproner-React/static/css/2.dd41c1b4.chunk.css",
-    "static/js/2.ea3c7c4a.chunk.js": "/Sproner-React/static/js/2.ea3c7c4a.chunk.js",
-    "static/js/2.ea3c7c4a.chunk.js.map": "/Sproner-React/static/js/2.ea3c7c4a.chunk.js.map",
+    "static/js/2.56cae4a5.chunk.js": "/Sproner-React/static/js/2.56cae4a5.chunk.js",
+    "static/js/2.56cae4a5.chunk.js.map": "/Sproner-React/static/js/2.56cae4a5.chunk.js.map",
     "index.html": "/Sproner-React/index.html",
     "static/css/2.dd41c1b4.chunk.css.map": "/Sproner-React/static/css/2.dd41c1b4.chunk.css.map",
     "static/css/main.70683c80.chunk.css.map": "/Sproner-React/static/css/main.70683c80.chunk.css.map",
-    "static/js/2.ea3c7c4a.chunk.js.LICENSE.txt": "/Sproner-React/static/js/2.ea3c7c4a.chunk.js.LICENSE.txt",
+    "static/js/2.56cae4a5.chunk.js.LICENSE.txt": "/Sproner-React/static/js/2.56cae4a5.chunk.js.LICENSE.txt",
     "static/media/all.css": "/Sproner-React/static/media/fa-solid-900.efbd5d20.eot"
   },
   "entrypoints": [
     "static/js/runtime-main.18900ad0.js",
     "static/css/2.dd41c1b4.chunk.css",
-    "static/js/2.ea3c7c4a.chunk.js",
+    "static/js/2.56cae4a5.chunk.js",
     "static/css/main.70683c80.chunk.css",
-    "static/js/main.2c3c57dd.chunk.js"
+    "static/js/main.da9dd04e.chunk.js"
   ]
 }
